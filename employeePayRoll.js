@@ -3,14 +3,17 @@ class EmployeePayrollData {
     set id(id){
       this._id = id; 
     }
+
+    
     
     get name() { return this._name; } 
     set name(name) {
-    let nameRegex = RegExp('^[A-Z]{1} [a-zA-Z\\s]{2,}$')
-    if (nameRegex.test(name))
-       this._name = name;
-    else throw 'Name is Incorrect!';
+        let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$')
+        if (nameRegex.test (name)) 
+        this._name = name;
+       else throw 'Name Incorrect';
     }
+    
     
     get profilePic() { return this._profilePic; } 
     set profilePic(profilePic) {
@@ -61,3 +64,4 @@ toString() {
 
 }
 }
+
