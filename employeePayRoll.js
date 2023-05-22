@@ -3,8 +3,6 @@ class EmployeePayrollData {
     set id(id){
       this._id = id; 
     }
-
-    
     
     get name() { return this._name; } 
     set name(name) {
