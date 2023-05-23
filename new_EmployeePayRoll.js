@@ -1,6 +1,7 @@
 
 window.addEventListener('DOMContentLoaded', (event) => { 
      const name = document.querySelector('#name'); 
+     console.log(name);
      const textError = document.querySelector('.text-error');
      name.addEventListener('input', function() {
       if (name.value.length == 0) {
@@ -18,6 +19,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
  
 
 const salary = document.querySelector('#salary'); 
+console.log(salary);
 const output = document.querySelector('.salary-output');
 output.textContent = salary.value;
 salary.addEventListener('input', function() 
@@ -28,6 +30,7 @@ salary.addEventListener('input', function()
 const save = () => { 
      try {
           let employeePayrollData = createEmployeePayroll();
+          console.log(employeePayrollData)
           createAndUpdateStorage(employeePayrollData);
       } catch (e) {
            return;
@@ -36,7 +39,7 @@ const save = () => {
 
      function createAndUpdateStorage (employeePayrollData) {
 
-          let employeePayrollList = JSON.parse(localStorage.getItem("Employee PayrollList"));
+          let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
           
           if (employeePayrollList != undefined) {
           
@@ -50,7 +53,7 @@ const save = () => {
           
           alert(employeePayrollList.toString());
           
-          localStorage.setItem("Employee PayrollList", JSON.stringify(employeePayrollList))
+          localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList))
 
      }
 
@@ -69,14 +72,20 @@ const save = () => {
      
 
      employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop(); 
+     console.log(employeePayrollData._profilePic);
      employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+     console.log(employeePayrollData.gender);
       employeePayrollData.department = getSelectedValues('[name=department]');
-        employeePayrollData, salary = getInputValueById('#salary');
+      console.log(employeePayrollData._department);
+        employeePayrollData.salary = getInputValueById('#salary');
+        console.log(employeePayrollData._salary);
       employeePayrollData.note = getInputValueById('#notes'); 
+      console.log(employeePayrollData._note);
       let date= getInputValueById('#day')+" "+getInputValueById('#month')+" "+
       getInputValueById('#year') ;
      
      employeePayrollData.date = Date.parse(date); 
+     console.log(employeePayrollData.date);
      alert(employeePayrollData.toString());
      return employeePayrollData;
 }

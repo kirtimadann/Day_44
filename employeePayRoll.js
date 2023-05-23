@@ -1,5 +1,7 @@
 class EmployeePayrollData {
-    get id(){ return this._id = id; }
+    get id(){ 
+        return this._id; 
+    }
     set id(id){
       this._id = id; 
     }
@@ -13,7 +15,9 @@ class EmployeePayrollData {
     }
     
     
-    get profilePic() { return this._profilePic; } 
+    get profilePic() {
+         return this._profilePic;
+         } 
     set profilePic(profilePic) {
         this._profilePic = profilePic;
     }
